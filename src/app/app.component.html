@@ -9,7 +9,7 @@
     <div>
       <ul>
         <ng-container *ngFor="let item of item1">
-          <custom-list [num]="item" title="non-trackBy"></custom-list>
+          <custom-list [num]="item.id" title="non-trackBy"></custom-list>
         </ng-container>
       </ul>
     </div>
@@ -24,7 +24,7 @@
     <div>
       <ul>
         <ng-container *ngFor="let item of item2; trackBy: trackByItem">
-          <custom-list [num]="item" title="trackBy"></custom-list>
+          <custom-list [num]="item.id" title="trackBy"></custom-list>
         </ng-container>
       </ul>
     </div>
