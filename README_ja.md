@@ -1,51 +1,51 @@
-# Overview
+# 概要
 
-This is a sample for checking the difference in the presence or absence of trackBy when using ngFor with Angular.  
-The returned value of trackBy should return a unique value.
+Angular で ngFor使用時にtrackByの有無の違いを確認するためのサンプルです。  
+trackByの戻り値は一意になる値を戻すようにします。
 
-# System requirements
+# 実行環境
 
 * Node.js 10.x
 * Yarn 1.12.x
 
-# Used library
+# 使用ライブラリ
 
 * TypeScript 3.1.x
 * Angular 7.1.x
 
-# Operation check  
+# 動作確認  
 
-## 1. Download Sample
+## 1. サンプルのダウンロード
 
 ```
 git clone git@github.com:yasu-s/ng-trackby-sample.git
 ```
 
-## 2. Installing packages  
+## 2. パッケージインストール  
 
 ```
 cd ng-trackby-sample
 yarn
 ```
 
-## 3. Launch sample application  
+## 3. サンプルの起動  
 
 ```
 yarn start
 ```
 
-## 4. Execution result   
+## 4. 実行結果  
 
-### non trackBy
+### trackBy未使用
 
 ![non-trackby](https://user-images.githubusercontent.com/2668146/50533725-b3f78b00-0b73-11e9-8f51-e7004988e54d.gif)
 
 
-### used trackBy
+### trackBy使用
 
 ![use-trackby](https://user-images.githubusercontent.com/2668146/50533745-f8832680-0b73-11e9-8a0d-420436b10255.gif)
 
-# Sample source
+# サンプルソース
 
 ## src/app/list.component.ts
 
