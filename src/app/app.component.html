@@ -23,7 +23,7 @@
     </div>
     <div>
       <ul>
-        <ng-container *ngFor="let item of item2; trackBy: trackByItem">
+        <ng-container *ngFor="let item of item2; trackBy: trackByItemFunc()">
           <custom-list [num]="item.id" title="trackBy"></custom-list>
         </ng-container>
       </ul>

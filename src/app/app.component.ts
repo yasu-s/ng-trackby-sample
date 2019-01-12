@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, TrackByFunction } from "@angular/core";
 
 interface ListData {
   id: number;
@@ -14,6 +14,9 @@ export class AppComponent {
 
   /** */
   item2: ListData[] = [];
+
+  /** */
+  key = "id";
 
   /**
    *
@@ -31,11 +34,11 @@ export class AppComponent {
 
   /**
    *
-   * @param index
-   * @param value
    */
-  trackByItem(index: number, value: ListData): number {
-    return value ? value.id : null;
+  trackByItemFunc(): TrackByFunction<ListData> {
+    return (index, value) => {
+      return value ? value[this.key] : null;
+    };
   }
 
   /**
