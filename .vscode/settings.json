@@ -2,7 +2,6 @@
   "git.ignoreLimitWarning": true,
   "[typescript]": {
     "files.trimTrailingWhitespace": true,
-    "editor.formatOnSave": true
   },
   "[html]": {
     "files.trimTrailingWhitespace": true

@@ -75,19 +75,20 @@ export class ListComponent implements OnInit, OnDestroy {
 ## src/app/app.component.ts
 
 ```typescript
-import { Component } from "@angular/core";
+import { Component, TrackByFunction } from '@angular/core';
 
 interface ListData {
   id: number;
 }
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html"
+  selector: 'app-root',
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   item1: ListData[] = [];
   item2: ListData[] = [];
+  key = 'id';
 
   setItem1(): void {
     this.item1 = this.createList();
@@ -99,11 +100,11 @@ export class AppComponent {
 
   /**
    * ngFor trackBy setting.
-   * @param index
-   * @param value 
    */
-  trackByItem(index: number, value: ListData): number {
-    return value ? value.id : null;
+  trackByItemFunc(): TrackByFunction<ListData> {
+    return (index, value) => {
+      return value ? value[this.key] : null;
+    };
   }
 
   private createList(): ListData[] {
@@ -151,7 +152,7 @@ export class AppComponent {
     </div>
     <div>
       <ul>
-        <ng-container *ngFor="let item of item2; trackBy: trackByItem">
+        <ng-container *ngFor="let item of item2; trackBy: trackByItemFunc()">
           <custom-list [num]="item.id" title="trackBy"></custom-list>
         </ng-container>
       </ul>
